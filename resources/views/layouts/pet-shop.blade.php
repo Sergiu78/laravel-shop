@@ -10,16 +10,16 @@
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 		
 		<!-- all css here -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/simple-line-icons.css">
-        <link rel="stylesheet" href="assets/css/themify-icons.css">
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="assets/css/slick.css">
-        <link rel="stylesheet" href="assets/css/meanmenu.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/responsive.css">
-        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/simple-line-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/meanmenu.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+        <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}"></script>
     </head>
     <body>
         <header class="header-area">
@@ -164,7 +164,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="about-us.html">ABOUT</a></li>
+                                        <li><a href="{{ route('about') }}">ABOUT</a></li>
                                         <li><a href="contact.html">contact us</a></li>
                                     </ul>
                                 </nav>
@@ -332,345 +332,201 @@
                 </div>
             </div>
         </header>
-        <div class="breadcrumb-area pt-95 pb-95 bg-img" style="background-image:url(assets/img/banner/banner-2.jpg);">
-            <div class="container">
-                <div class="breadcrumb-content text-center">
-                    <h2>About Us</h2>
-                    <ul>
-                        <li><a href="index.html">home</a></li>
-                        <li class="active">About Us</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="about-us-area pt-100 pb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="about-us-img pr-30 wow fadeInLeft">
-                            <img alt="" src="assets/img/banner/banner-3.png">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 d-flex align-items-center">
-                        <div class="about-us-content">
-                            <h2>About Marten</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididu ut labore et dolore magna aliqua. Ut enim ad minim  quis nostrud exercitat ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <div class="about-us-list">
+
+@yield('content')
+
+<footer class="footer-area">
+    <div class="footer-top pt-80 pb-50 gray-bg-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-widget mb-30">
+                        <div class="footer-info-wrapper">
+                            <div class="footer-logo">
+                                <a href="#">
+                                    <img src="assets/img/logo/logo-2.png" alt="">
+                                </a>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, co adipisi elit, sed eiusmod tempor incididunt ut labore et dolore</p>
+                            <div class="social-icon">
                                 <ul>
-                                    <li>There are many variations of passages</li>
-                                    <li>Contrary to popular belief is not simply</li>
-                                    <li>But I must explain to you how all this mistaken </li>
+                                    <li><a href="#"><i class="icon-social-twitter"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-instagram"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-skype"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-dribbble"></i></a></li>
                                 </ul>
                             </div>
-                            <div class="about-us-btn">
-                                <a class="btn-style" href="#">CONTACT US</a>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="project-count-area pb-70 pt-100 gray-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                        <div class="single-count mb-30 text-center">
-                            <h2 class="count">18</h2>
-                            <span>Years in Business</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                        <div class="single-count mb-30 text-center">
-                            <h2 class="count">290</h2>
-                            <span>Happy People</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                        <div class="single-count mb-30 text-center">
-                            <h2 class="count">24</h2>
-                            <span>Billion Sales</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                        <div class="single-count mb-30 text-center">
-                            <h2 class="count">17</h2>
-                            <span>Award Winning</span>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-widget mb-30 pl-50">
+                        <h4 class="footer-title">USEFUL LINKS</h4>
+                        <div class="footer-content">
+                            <ul>
+                                <li><a href="#">Help & Contact Us</a></li>
+                                <li><a href="#">Returns & Refunds</a></li>
+                                <li><a href="#">Online Stores</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-		<div class="testimonial-area pt-90 pb-70 bg-img" style="background-image:url(assets/img/banner/banner-1.jpg);">
-		    <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 ml-auto mr-auto">
-                        <div class="testimonial-wrap">
-                            <div class="testimonial-text-slider text-center">
-                                <div class="sin-testiText">
-                                    <p>Lorem ipsum dolor sit amet, co adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercita ullamco laboris nisi ut aliquip ex ea commodo</p>
-                                </div>
-                                <div class="sin-testiText">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or amro porano ja cai tomi tai go amro porano  amro porano ja cai tomi tai go  .... </p>
-                                </div>
-                                <div class="sin-testiText">
-                                    <p>Lorem ipsum dolor sit amet, co adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercita ullamco laboris nisi ut aliquip ex ea commodo</p>
-                                </div>
-                                <div class="sin-testiText">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or amro porano ja cai tomi tai go amro porano  amro porano ja cai tomi tai go  .... </p>
-                                </div>
-                            </div>
-                            <div class="testimonial-image-slider text-center">
-                                <div class="sin-testiImage">
-                                    <img src="assets/img/testi/3.jpg" alt="">
-                                    <h3>Samia Robiul</h3>
-                                    <h5>Customer</h5>
-                                </div>
-                                <div class="sin-testiImage">
-                                    <img src="assets/img/testi/4.jpg" alt="">
-                                    <h3>Samia Robiul</h3>
-                                    <h5>Customer</h5>
-                                </div>
-                                <div class="sin-testiImage">
-                                    <img src="assets/img/testi/3.jpg" alt="">
-                                    <h3>F H Shuvo</h3>
-                                    <h5>Developer</h5>
-                                </div>
-                                <div class="sin-testiImage">
-                                    <img src="assets/img/testi/5.jpg" alt="">
-                                    <h3>T T Rayed</h3>
-                                    <h5>CEO</h5>
-                                </div>
-                            </div>
-                            <div class="testimonial-shap">
-                                <img src="assets/img/icon-img/testi-shap.png" alt="">
-                            </div>
+                <div class="col-xl-3 col-lg-2 col-md-6 col-sm-6">
+                    <div class="footer-widget mb-30 pl-70">
+                        <h4 class="footer-title">HELP</h4>
+                        <div class="footer-content">
+                            <ul>
+                                <li><a href="#">Faq's </a></li>
+                                <li><a href="#">Pricing Plans</a></li>
+                                <li><a href="#">Order Traking</a></li>
+                                <li><a href="#">Returns </a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-		</div>
-		<div class="team-ara pt-95 pb-70">
-            <div class="container">
-                <div class="section-title text-center mb-55">
-                    <h2>Our Team</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="team-wrapper mb-30">
-                            <div class="team-img">
-                                <a href="#">
-                                    <img src="assets/img/team/team-1.jpg" alt="">
-                                </a>
-                                <div class="team-social">
-                                    <a href="#">
-                                        <i class="ti-facebook"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-pinterest"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-twitter-alt"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="team-content text-center">
-                                <h4>Adam Jonson</h4>
-                                <span>Customer </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="team-wrapper mb-30">
-                            <div class="team-img">
-                                <a href="#">
-                                    <img src="assets/img/team/team-2.jpg" alt="">
-                                </a>
-                                <div class="team-social">
-                                    <a href="#">
-                                        <i class="ti-facebook"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-pinterest"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-twitter-alt"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="team-content text-center">
-                                <h4>Rose Evans</h4>
-                                <span>Manager </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="team-wrapper mb-30">
-                            <div class="team-img">
-                                <a href="#">
-                                    <img src="assets/img/team/team-3.jpg" alt="">
-                                </a>
-                                <div class="team-social">
-                                    <a href="#">
-                                        <i class="ti-facebook"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-pinterest"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-twitter-alt"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="team-content text-center">
-                                <h4>Bruce Cole</h4>
-                                <span>Customer </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="team-wrapper mb-30">
-                            <div class="team-img">
-                                <a href="#">
-                                    <img src="assets/img/team/team-4.jpg" alt="">
-                                </a>
-                                <div class="team-social">
-                                    <a href="#">
-                                        <i class="ti-facebook"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-pinterest"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-twitter-alt"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="team-content text-center">
-                                <h4>Debra Lane</h4>
-                                <span>Manager </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-		<footer class="footer-area">
-            <div class="footer-top pt-80 pb-50 gray-bg-2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="footer-widget mb-30">
-                                <div class="footer-info-wrapper">
-                                    <div class="footer-logo">
-                                        <a href="#">
-                                            <img src="assets/img/logo/logo-2.png" alt="">
-                                        </a>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, co adipisi elit, sed eiusmod tempor incididunt ut labore et dolore</p>
-                                    <div class="social-icon">
-                                        <ul>
-                                            <li><a href="#"><i class="icon-social-twitter"></i></a></li>
-                                            <li><a href="#"><i class="icon-social-instagram"></i></a></li>
-                                            <li><a href="#"><i class="icon-social-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="icon-social-skype"></i></a></li>
-                                            <li><a href="#"><i class="icon-social-dribbble"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="footer-widget mb-30 pl-50">
-                                <h4 class="footer-title">USEFUL LINKS</h4>
-                                <div class="footer-content">
-                                    <ul>
-                                        <li><a href="#">Help & Contact Us</a></li>
-                                        <li><a href="#">Returns & Refunds</a></li>
-                                        <li><a href="#">Online Stores</a></li>
-                                        <li><a href="#">Terms & Conditions</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-2 col-md-6 col-sm-6">
-                            <div class="footer-widget mb-30 pl-70">
-                                <h4 class="footer-title">HELP</h4>
-                                <div class="footer-content">
-                                    <ul>
-                                        <li><a href="#">Faq's </a></li>
-                                        <li><a href="#">Pricing Plans</a></li>
-                                        <li><a href="#">Order Traking</a></li>
-                                        <li><a href="#">Returns </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="footer-widget">
-                                <div class="newsletter-wrapper">
-                                    <p>Subscribe to our newsletter and get 10% off your first purchase..</p>
-                                    <div class="newsletter-style">
-                                        <div id="mc_embed_signup" class="subscribe-form">
-                                            <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                                                <div id="mc_embed_signup_scroll" class="mc-form">
-                                                    <input type="email" value="" name="EMAIL" class="email" placeholder="Your mail address" required>
-                                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                                    <div class="mc-news" aria-hidden="true"><input type="text" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef" tabindex="-1" value=""></div>
-                                                    <div class="clear"><input type="submit" value="SEND" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                                                </div>
-                                            </form>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="footer-widget">
+                        <div class="newsletter-wrapper">
+                            <p>Subscribe to our newsletter and get 10% off your first purchase..</p>
+                            <div class="newsletter-style">
+                                <div id="mc_embed_signup" class="subscribe-form">
+                                    <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                        <div id="mc_embed_signup_scroll" class="mc-form">
+                                            <input type="email" value="" name="EMAIL" class="email" placeholder="Your mail address" required>
+                                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                            <div class="mc-news" aria-hidden="true"><input type="text" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef" tabindex="-1" value=""></div>
+                                            <div class="clear"><input type="submit" value="SEND" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
-                                <div class="payment-img">
-                                    <a href="index.html">
-                                        <img src="assets/img/icon-img/payment.png" alt="">
-                                    </a>
-                                </div>
+                            </div>
+                        </div>
+                        <div class="payment-img">
+                            <a href="index.html">
+                                <img src="assets/img/icon-img/payment.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom gray-bg-3 pt-17 pb-15">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="copyright text-center">
+                        <p>Copyright © <a href="#">Marten.</a> All Right Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span class="ti-close" aria-hidden="true"></span>
+    </button>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="qwick-view-left">
+                    <div class="quick-view-learg-img">
+                        <div class="quick-view-tab-content tab-content">
+                            <div class="tab-pane active show fade" id="modal1" role="tabpanel">
+                                <img src="assets/img/quick-view/l1.jpg" alt="">
+                            </div>
+                            <div class="tab-pane fade" id="modal2" role="tabpanel">
+                                <img src="assets/img/quick-view/l2.jpg" alt="">
+                            </div>
+                            <div class="tab-pane fade" id="modal3" role="tabpanel">
+                                <img src="assets/img/quick-view/l3.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quick-view-list nav" role="tablist">
+                        <a class="active" href="#modal1" data-toggle="tab">
+                            <img src="assets/img/quick-view/s1.jpg" alt="">
+                        </a>
+                        <a href="#modal2" data-toggle="tab" role="tab">
+                            <img src="assets/img/quick-view/s2.jpg" alt="">
+                        </a>
+                        <a href="#modal3" data-toggle="tab" role="tab">
+                            <img src="assets/img/quick-view/s3.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="qwick-view-right">
+                    <div class="qwick-view-content">
+                        <h3>Dog Calcium Food</h3>
+                        <div class="product-price">
+                            <span class="new">$20.00 </span>
+                            <span class="old">$50.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="icon-star theme-color"></i>
+                            <i class="icon-star theme-color"></i>
+                            <i class="icon-star theme-color"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do amt tempor incididun ut labore et dolore magna aliqua. Ut enim ad mi , quis nostrud veniam exercitation .</p>
+                        <div class="quick-view-select">
+                            <div class="select-option-part">
+                                <label>Size*</label>
+                                <select class="select">
+                                    <option value="">- Please Select -</option>
+                                    <option value="">XS</option>
+                                    <option value="">S</option>
+                                    <option value="">M</option>
+                                    <option value=""> L</option>
+                                    <option value="">XL</option>
+                                    <option value="">XXL</option>
+                                </select>
+                            </div>
+                            <div class="select-option-part">
+                                <label>Color*</label>
+                                <select class="select">
+                                    <option value="">- Please Select -</option>
+                                    <option value="">orange</option>
+                                    <option value="">pink</option>
+                                    <option value="">yellow</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="quickview-plus-minus">
+                            <div class="cart-plus-minus">
+                                <input type="text" value="2" name="qtybutton" class="cart-plus-minus-box">
+                            </div>
+                            <div class="quickview-btn-cart">
+                                <a class="btn-style" href="#">add to cart</a>
+                            </div>
+                            <div class="quickview-btn-wishlist">
+                                <a class="btn-hover" href="#"><i class="ti-heart"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom gray-bg-3 pt-17 pb-15">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="copyright text-center">
-                                <p>Copyright © <a href="#">Marten.</a> All Right Reserved.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-		</footer>
-		
-		
-		
-		
-		<!-- all js here -->
-        <script src="assets/js/vendor/jquery-1.12.0.min.js"></script>
-        <script src="assets/js/popper.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <script src="assets/js/waypoints.min.js"></script>
-        <script src="assets/js/elevetezoom.js"></script>
-        <script src="assets/js/ajax-mail.js"></script>
-        <script src="assets/js/owl.carousel.min.js"></script>
-        <script src="assets/js/plugins.js"></script>
-        <script src="assets/js/main.js"></script>
-    </body>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- all js here -->
+<script src="{{ asset('js/vendor/jquery-1.12.0.min.js') }}"></script>
+<script src="{{ asset('js/popper.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('js/waypoints.min.js') }}"></script>
+<script src="{{ asset('js/elevetezoom.js') }}"></script>
+<script src="{{ asset('js/ajax-mail.js') }}"></script>
+<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/plugins.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+</body>
 </html>
