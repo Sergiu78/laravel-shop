@@ -251,7 +251,7 @@
                                                     <a href="about-us.html">about us</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-page.html">shop page</a>
+                                                    <a href="{{ route('shop-page') }}">shop page</a>
                                                 </li>
                                                 <li>
                                                     <a href="shop-list.html">shop list</a>

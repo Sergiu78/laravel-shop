@@ -2092,6 +2092,8 @@ button.icon-cart span.count-style {
     transition: all .0s ease 0s;
 }
 .product-img {
+    height: 270px;
+    width: 265px;
     position: relative;
     overflow: hidden;
 }

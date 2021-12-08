@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('pet-shop.index');
 });
 Route::get('/about', 'PetController@about')->name('about');
+Route::get('/shop-page', 'PetController@shopPage')->name('shop-page');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
