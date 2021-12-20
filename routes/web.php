@@ -15,15 +15,15 @@ use App\Http\Controllers\PetController;
 |
 */
 
-Route::get('/', function () {
-    return view('pet-shop.index');
-});
+Route::get('/', 'PetController@index')->name('index');
 Route::get('/about', 'PetController@about')->name('about');
 Route::get('/shop-page', 'PetController@shopPage')->name('shop-page');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/add-cart', 'PetController@addCart')->name('add-cart');
 
 require __DIR__.'/auth.php';
 

@@ -123,7 +123,7 @@
                                                     <a href="about-us.html">about us</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-page.html">shop page</a>
+                                                    <a href="{{ route('shop-page') }}">shop page</a>
                                                 </li>
                                                 <li>
                                                     <a href="shop-list.html">shop list</a>
@@ -192,40 +192,31 @@
                                 <div class="header-cart same-style">
                                     <button class="icon-cart">
                                         <i class="icon-handbag"></i>
-                                        <span class="count-style">02</span>
+                                        <span class="count-style">{{ \Cart::session(\Illuminate\Support\Facades\Session::getId())->getTotalQuantity() }}</span>
                                     </button>
                                     <div class="shopping-cart-content">
                                         <ul>
+                                            @foreach ($cart as $item)
                                             <li class="single-shopping-cart">
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-1.jpg"></a>
+                                                    <a href="#"><img alt="" src="{{ asset('/storage/' . $item->attributes->image) }}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
-                                                    <h4><a href="#">Dog Calcium Food </a></h4>
-                                                    <h6>Qty: 02</h6>
-                                                    <span>$260.00</span>
+                                                    <h4><a href="#">{{ $item->name }} </a></h4>
+                                                    <h6>Qty: {{ $item->quantity }}</h6>
+                                                    <span>$ {{ $item->price }}</span>
                                                 </div>
                                                 <div class="shopping-cart-delete">
                                                     <a href="#"><i class="ti-close"></i></a>
                                                 </div>
                                             </li>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-2.jpg"></a>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Dog Calcium Food</a></h4>
-                                                    <h6>Qty: 02</h6>
-                                                    <span>$260.00</span>
-                                                </div>
-                                                <div class="shopping-cart-delete">
-                                                    <a href="#"><i class="ti-close"></i></a>
-                                                </div>
-                                            </li>
+                                            @endforeach
+                                            
+                                            
                                         </ul>
                                         <div class="shopping-cart-total">
-                                            <h4>Shipping : <span>$20.00</span></h4>
-                                            <h4>Total : <span class="shop-total">$260.00</span></h4>
+                                            <h4>Shipping : <span>Free</span></h4>
+                                            <h4>Total : <span class="shop-total">$ {{ $sum }}</span></h4>
                                         </div>
                                         <div class="shopping-cart-btn">
                                             <a href="cart.html">view cart</a>
