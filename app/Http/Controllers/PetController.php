@@ -52,4 +52,24 @@ class PetController extends Controller
         $cart = \Cart::getContent();
         return redirect()->back();
     }
+
+    public function loginRegister()
+    {
+        $sessionId = Session::getId();
+        \Cart::session($sessionId);
+        $cart = \Cart::getContent();
+        $sum = \Cart::getTotal('price');
+
+        return view('pet-shop/login-register', compact('sessionId', 'cart', 'sum'))->with('flashMessage', 'You need to login or register at first ');
+    }
+
+    public function myAccount()
+    {
+        $sessionId = Session::getId();
+        \Cart::session($sessionId);
+        $cart = \Cart::getContent();
+        $sum = \Cart::getTotal('price');
+
+        return view('pet-shop/my-account', compact('sessionId', 'cart', 'sum'));
+    }
 }

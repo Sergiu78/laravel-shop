@@ -8,7 +8,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-		
+		<style type="text/css">
+            @font-face {
+                font-family: AvenirNextCyr-Bold;
+                src: url('{{ public_path('assets/fonts/AvenirNextCyr-Bold.woff') }}');
+            }
+            @font-face {
+                font-family: AvenirNextCyr-Bold;
+                src: url('{{ public_path('assets/fonts/AvenirNextCyr-Bold.woff2') }}');
+            }
+            @font-face {
+                font-family: AvenirNextCyr-Italic;
+                src: url('{{ public_path('assets/fonts/AvenirNextCyr-Italic.woff') }}');
+            }
+            @font-face {
+                font-family: AvenirNextCyr-Italic;
+                src: url('{{ public_path('assets/fonts/AvenirNextCyr-Italic.woff2') }}');
+            }
+            @font-face {
+                font-family: AvenirNextCyr-Medium;
+                src: url('{{ public_path('assets/fonts/AvenirNextCyr-Medium.woff') }}');
+            }
+            @font-face {
+                font-family: AvenirNextCyr-Medium;
+                src: url('{{ public_path('assets/fonts/AvenirNextCyr-Medium.woff2') }}');
+            }
+            @font-face {
+                font-family: AvenirNextCyr-Regular;
+                src: url('{{ public_path('assets/fonts/AvenirNextCyr-Regular.woff') }}');
+            }
+            @font-face {
+                font-family: AvenirNextCyr-Regular;
+                src: url('{{ public_path('assets/fonts/AvenirNextCyr-Regular.woff2') }}');
+            }
+            
+        </style>
 		<!-- all css here -->
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
@@ -187,7 +221,7 @@
                                     </div>
                                 </div>
                                 <div class="header-login same-style">
-                                    <a href="login-register.html"><i class="icon-user icons"></i></a>
+                                    <a href="{{ route('my-account') }}"><i class="icon-user icons"></i></a>
                                 </div>
                                 <div class="header-cart same-style">
                                     <button class="icon-cart">
