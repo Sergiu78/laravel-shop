@@ -72,4 +72,14 @@ class PetController extends Controller
 
         return view('pet-shop/my-account', compact('sessionId', 'cart', 'sum'));
     }
+
+    public function checkout()
+    {
+        $sessionId = Session::getId();
+        \Cart::session($sessionId);
+        $cart = \Cart::getContent();
+        $sum = \Cart::getTotal('price');
+
+        return view('pet-shop/checkout', compact('sessionId', 'cart', 'sum'));
+    }
 }

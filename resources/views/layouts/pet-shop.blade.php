@@ -169,7 +169,7 @@
                                                     <a href="cart.html">cart page</a>
                                                 </li>
                                                 <li>
-                                                    <a href="checkout.html">checkout</a>
+                                                    <a href="{{ route('checkout') }}">checkout</a>
                                                 </li>
                                                 <li>
                                                     <a href="wishlist.html">wishlist</a>
@@ -254,7 +254,7 @@
                                         </div>
                                         <div class="shopping-cart-btn">
                                             <a href="cart.html">view cart</a>
-                                            <a href="checkout.html">checkout</a>
+                                            <a href="{{ route('checkout') }}">checkout</a>
                                         </div>
                                     </div>
                                 </div>
