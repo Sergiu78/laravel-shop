@@ -75,11 +75,17 @@ class PetController extends Controller
 
     public function checkout()
     {
+        $user = auth()->user();
         $sessionId = Session::getId();
         \Cart::session($sessionId);
         $cart = \Cart::getContent();
         $sum = \Cart::getTotal('price');
 
-        return view('pet-shop/checkout', compact('sessionId', 'cart', 'sum'));
+        return view('pet-shop/checkout', compact('sessionId', 'cart', 'sum', 'user'));
+    }
+
+    public function makeOrder(Request $request)
+    {
+        dd($request);
     }
 }

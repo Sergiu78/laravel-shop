@@ -25,103 +25,192 @@
                                         <h5 class="panel-title"><span>2</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-2">billing information</a></h5>
                                     </div>
                                     <div id="payment-2" class="panel-collapse collapse">
+                                        <form action="{{ route('make-order') }}" method="POST">
+                                            @csrf
                                         <div class="panel-body">
                                             <div class="billing-information-wrapper">
                                                 <div class="row">
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>First Name</label>
-                                                            <input type="text">
+                                                            <input name="name" type="text" value="{{ $user->name }}">
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-6 col-md-6">
-                                                        <div class="billing-info">
-                                                            <label>Last Name</label>
-                                                            <input type="text">
-                                                        </div>
-                                                    </div>
+                                                    
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Company</label>
-                                                            <input type="text">
+                                                            <input name="company" type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Email Address</label>
-                                                            <input type="email">
+                                                            <input name="email" type="email" value="{{ $user->email }}">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12 col-md-12">
                                                         <div class="billing-info">
                                                             <label>Address</label>
-                                                            <input type="text">
+                                                            <input name="adress" type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>city</label>
-                                                            <input type="text">
+                                                            <input name="city" type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>State/Province</label>
-                                                            <input type="text">
+                                                            <input name="state" type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Zip/Postal Code</label>
-                                                            <input type="text">
+                                                            <input name="post" type="text">
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-6 col-md-6">
-                                                        <div class="billing-select card-mrg">
-                                                            <label>Country</label>
-                                                            <select>
-                                                                <option value="1">United State</option>
-                                                                <option value="2">Azerbaijan</option>
-                                                                <option value="3">Bahamas</option>
-                                                                <option value="4">Bahrain</option>
-                                                                <option value="5">Bangladesh</option>
-                                                                <option value="6">Barbados</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                                                    
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Telephone</label>
-                                                            <input type="text">
+                                                            <input name="phone" type="text">
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-6 col-md-6">
-                                                        <div class="billing-info">
-                                                            <label>Fax</label>
-                                                            <input type="text">
-                                                        </div>
+                                                    
+                                                </div>
+                                                <div class="order-review">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="width-1">Product Name</th>
+                                                                    <th class="width-2">Price</th>
+                                                                    <th class="width-3">Qty</th>
+                                                                    <th class="width-4">Subtotal</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="o-pro-dec">
+                                                                            <p>Fusce aliquam</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="o-pro-price">
+                                                                            <p>$236.00</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="o-pro-qty">
+                                                                            <p>2</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="o-pro-subtotal">
+                                                                            <p>$236.00</p>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="o-pro-dec">
+                                                                            <p>Primis in faucibus</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="o-pro-price">
+                                                                            <p>$265.00</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="o-pro-qty">
+                                                                            <p>3</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="o-pro-subtotal">
+                                                                            <p>$265.00</p>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="o-pro-dec">
+                                                                            <p>Etiam gravida</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="o-pro-price">
+                                                                            <p>$363.00</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="o-pro-qty">
+                                                                            <p>2</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="o-pro-subtotal">
+                                                                            <p>$363.00</p>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="o-pro-dec">
+                                                                            <p>Quisque in arcu</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="o-pro-price">
+                                                                            <p>$328.00</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="o-pro-qty">
+                                                                            <p>2</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="o-pro-subtotal">
+                                                                            <p>$328.00</p>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                            <tfoot>
+                                                                
+                                                                <tr>
+                                                                    <td colspan="3">Grand Total</td>
+                                                                    <td colspan="1">$4,722.00</td>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+                                                    <div class="billing-back-btn">
+                                                        <span>
+                                                            Forgot an Item?
+                                                            <a href="#"> Edit Your Cart.</a>
+
+                                                        </span>
+                                                        
                                                     </div>
                                                 </div>
-                                                <div class="ship-wrapper">
-                                                    <div class="single-ship">
-                                                        <input type="radio" name="address" value="address" checked="">
-                                                        <label>Ship to this address</label>
-                                                    </div>
-                                                    <div class="single-ship">
-                                                        <input type="radio" name="address" value="dadress">
-                                                        <label>Ship to different address</label>
-                                                    </div>
-                                                </div>
+                                                
                                                 <div class="billing-back-btn">
-                                                    <div class="billing-back">
-                                                        <a href="#"><i class="ti-arrow-up"></i> back</a>
-                                                    </div>
+                                                    
                                                     <div class="billing-btn">
-                                                        <button type="submit">Get a Quote</button>
+                                                        <button type="submit">Make an order</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </form>
                                     </div>
                                 </div>
                                 <div class="panel panel-default">
