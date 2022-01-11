@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Product;
 use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
@@ -86,6 +87,20 @@ class PetController extends Controller
 
     public function makeOrder(Request $request)
     {
-        dd($request);
+        $user = auth()->user();
+        $sessionId = Session::getId();
+        \Cart::session($sessionId);
+        $cart = \Cart::getContent();
+        $sum = \Cart::getTotal('price');
+
+        $order = new Order();
+        $order->user_id = $user->id;
+        $order->cart_data = $order->setCartDataAttribute($cart);
+        $order->total_sum = $sum;
+        $order->phone = $request->phone;
+        $order->adress = $request->adress . ' ' . $request->city . ' ' . $request->state . ' ' . $request->post;
+
+        $order->save();
+        return back();
     }
 }

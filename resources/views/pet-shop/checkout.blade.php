@@ -94,100 +94,38 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                                @foreach ($cart as $item)
                                                                 <tr>
                                                                     <td>
                                                                         <div class="o-pro-dec">
-                                                                            <p>Fusce aliquam</p>
+                                                                            <p>{{ $item->name }}</p>
                                                                         </div>
                                                                     </td>
                                                                     <td>
                                                                         <div class="o-pro-price">
-                                                                            <p>$236.00</p>
+                                                                            <p>{{ $item->price }}</p>
                                                                         </div>
                                                                     </td>
                                                                     <td>
                                                                         <div class="o-pro-qty">
-                                                                            <p>2</p>
+                                                                            <p>{{ $item->quantity }}</p>
                                                                         </div>
                                                                     </td>
                                                                     <td>
                                                                         <div class="o-pro-subtotal">
-                                                                            <p>$236.00</p>
+                                                                            <p>${{ $item->price * $item->quantity }}</p>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="o-pro-dec">
-                                                                            <p>Primis in faucibus</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-price">
-                                                                            <p>$265.00</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-qty">
-                                                                            <p>3</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-subtotal">
-                                                                            <p>$265.00</p>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="o-pro-dec">
-                                                                            <p>Etiam gravida</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-price">
-                                                                            <p>$363.00</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-qty">
-                                                                            <p>2</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-subtotal">
-                                                                            <p>$363.00</p>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="o-pro-dec">
-                                                                            <p>Quisque in arcu</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-price">
-                                                                            <p>$328.00</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-qty">
-                                                                            <p>2</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="o-pro-subtotal">
-                                                                            <p>$328.00</p>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
+                                                                
+                                                                @endforeach
+                                                                
                                                             </tbody>
                                                             <tfoot>
                                                                 
                                                                 <tr>
                                                                     <td colspan="3">Grand Total</td>
-                                                                    <td colspan="1">$4,722.00</td>
+                                                                    <td colspan="1">${{ $sum }}</td>
                                                                 </tr>
                                                             </tfoot>
                                                         </table>
