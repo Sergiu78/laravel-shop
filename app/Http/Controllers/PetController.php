@@ -82,7 +82,20 @@ class PetController extends Controller
         $cart = \Cart::getContent();
         $sum = \Cart::getTotal('price');
 
-        return view('pet-shop/checkout', compact('sessionId', 'cart', 'sum', 'user'));
+        $messageSuccessOrder = \session('successOrder');
+
+        $orders = Order::query()->where(['user_id' => $user->getAuthIdentifier()])->orderBy('id', 'desc')->get();
+
+        $orders->transform(function($order){
+            $order->cart_data = unserialize($order->cart_data);
+            return $order;
+        });
+
+        if(!empty($messageSuccessOrder)) {
+            return view('pet-shop/checkout', compact('sessionId', 'cart', 'sum', 'user'))->with('messageSuccessOrder', $messageSuccessOrder);
+        }
+
+        return view('pet-shop/checkout', compact('sessionId', 'cart', 'sum', 'user'))->with('messageSuccessOrder', $messageSuccessOrder);
     }
 
     public function makeOrder(Request $request)
@@ -100,7 +113,16 @@ class PetController extends Controller
         $order->phone = $request->phone;
         $order->adress = $request->adress . ' ' . $request->city . ' ' . $request->state . ' ' . $request->post;
 
-        $order->save();
+        if($order->save()) {
+            \Cart::clear();
+
+            Session::flash('successOrder', 'Order created successfully');
+
+            return back();
+        }
+
+        Session::flash('errorOrder', 'Something went wrong');
+
         return back();
     }
 }
