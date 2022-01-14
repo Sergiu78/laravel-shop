@@ -95,7 +95,7 @@ class PetController extends Controller
             return view('pet-shop/checkout', compact('sessionId', 'cart', 'sum', 'user'))->with('messageSuccessOrder', $messageSuccessOrder);
         }
 
-        return view('pet-shop/checkout', compact('sessionId', 'cart', 'sum', 'user'))->with('messageSuccessOrder', $messageSuccessOrder);
+        return view('pet-shop/checkout', compact('sessionId', 'cart', 'sum', 'user', 'orders'))->with('messageSuccessOrder', $messageSuccessOrder);
     }
 
     public function makeOrder(Request $request)
