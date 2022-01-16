@@ -91,7 +91,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="product-wrapper mb-10">
                         <div class="product-img">
-                            <a href="product-details.html">
+                            <a href="{{ route('product-details', ['id' => $randomProduct->id]) }}">
                                 <img src="{{ asset('storage/'.$randomProduct->image) }}" alt="">
                             </a>
                             <div class="product-action">
@@ -109,7 +109,7 @@
                             </div>
                         </div>
                         <div class="product-content">
-                            <h4><a href="product-details.html">{{ $randomProduct->name }}</a></h4>
+                            <h4><a href="{{ route('product-details', ['id' => $randomProduct->id]) }}">{{ $randomProduct->name }}</a></h4>
                             <div class="product-price">
                                 <span class="new">{{ $randomProduct->price }}</span>
                                 

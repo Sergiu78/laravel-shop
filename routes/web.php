@@ -18,6 +18,7 @@ use App\Http\Controllers\PetController;
 Route::get('/', 'PetController@index')->name('home');
 Route::get('/about', 'PetController@about')->name('about');
 Route::get('/shop-page', 'PetController@shopPage')->name('shop-page');
+Route::get('/product-details/{id}', 'PetController@productDetails')->name('product-details');
 Route::get('/login-register', 'PetController@loginRegister')->name('login-register');
 Route::get('/my-account', 'PetController@myAccount')->middleware('auth')->name('my-account');
 Route::get('/checkout', 'PetController@checkout')->middleware('auth')->name('checkout');

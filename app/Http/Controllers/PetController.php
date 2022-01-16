@@ -34,6 +34,17 @@ class PetController extends Controller
         return view('pet-shop/shop-page', compact('products'));
     }
 
+    public function productDetails(Request $request)
+    {
+        $sessionId = Session::getId();
+        \Cart::session($sessionId);
+        $cart = \Cart::getContent();
+        $sum = \Cart::getTotal('price');
+
+        $product = Product::query()->where(['id' => $request->id])->get();
+        return view('pet-shop/product-details', compact('product', 'cart', 'sum'));
+    }
+
     public function addCart(Request $request)
     {
         $product = Product::query()->where(['id' => $request->id])->first();
