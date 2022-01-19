@@ -30,7 +30,7 @@
                                 
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h5 class="panel-title"><span>1</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-2">billing information</a></h5>
+                                        <h5 class="panel-title"><span>1</span> <a data-toggle="collapse" data-parent="#faq" href="#payment-1">billing information</a></h5>
                                     </div>
                                     <div id="payment-1" class="panel-collapse collapse">
                                         <form action="{{ route('make-order') }}" method="POST">

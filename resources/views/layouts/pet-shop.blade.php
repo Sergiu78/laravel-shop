@@ -102,7 +102,7 @@
                             <div class="main-menu text-center">
                                 <nav>
                                     <ul>
-                                        <li><a href="index.html">HOME</a>
+                                        <li><a href="{{ route('home') }}">HOME</a>
                                             <ul class="submenu">
                                                 <li>
                                                     <a href="index.html">home version 1</a>

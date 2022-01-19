@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderIn;
+use App\Mail\OrderOut;
 use App\Models\Order;
 use App\Product;
 use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class PetController extends Controller
@@ -103,7 +106,7 @@ class PetController extends Controller
         });
 
         if(!empty($messageSuccessOrder)) {
-            return view('pet-shop/checkout', compact('sessionId', 'cart', 'sum', 'user'))->with('messageSuccessOrder', $messageSuccessOrder);
+            return view('pet-shop/checkout', compact('sessionId', 'cart', 'sum', 'user', 'orders'))->with('messageSuccessOrder', $messageSuccessOrder);
         }
 
         return view('pet-shop/checkout', compact('sessionId', 'cart', 'sum', 'user', 'orders'))->with('messageSuccessOrder', $messageSuccessOrder);
@@ -124,7 +127,19 @@ class PetController extends Controller
         $order->phone = $request->phone;
         $order->adress = $request->adress . ' ' . $request->city . ' ' . $request->state . ' ' . $request->post;
 
+        
         if($order->save()) {
+
+            Mail::to('turutaserghei@mail.ru')->send(new OrderIn([
+                'cart' => $cart,
+                'sum' => $sum,
+                'user' => $user
+            ]));
+            Mail::to($request->user())->send(new OrderOut([
+                'cart' => $cart,
+                'sum' => $sum
+            ]));
+
             \Cart::clear();
 
             Session::flash('successOrder', 'Order created successfully');
